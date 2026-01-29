@@ -44,7 +44,7 @@ export default async function RootLayout({
         } as React.CSSProperties
       }
       closeButton theme="light" />
-      <Provider session={SessionProvider}>
+      <Provider session={SessionProvider} >
         {children}
         </Provider>
       </body>

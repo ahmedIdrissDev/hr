@@ -21,11 +21,11 @@ const Employee = () => {
   const Present = data || []
     
   return (
-    <div className="bg-tgcc-900  p-2 h-max rounded-md">
-      <div className="py-2 text-white">
+    <div className="bg-white  p-2 h-max rounded-md">
+      <div className="py-2">
         <span>Suivi du pointage Mensuel</span>
       </div>
-      <ScrollArea className="h-full py-2 flex flex-col space-x-2.5 button w-full rounded-md  ">
+      <ScrollArea className="h-full py-2 flex flex-col space-x-2.5  w-full rounded-md  ">
       {Present.length > 0 &&
           <Alert className="bg-white" variant="destructive">
           <SearchAlert />
@@ -76,10 +76,13 @@ const Employee = () => {
                   <TableCell className="font-medium">{last_name} </TableCell>
                   <TableCell>{first_name} </TableCell>
                   <TableCell>{type}</TableCell>
-                  <TableHead className=" flex justify-end items-center h-full">
+                  <TableHead>
+                    <div className="flex justify-end items-center h-full">
                      <Link href={`/employee/${_id}`} className="button justify-center w-40 h-11">
                       Consultation
                      </Link>
+
+                    </div>
       
                                </TableHead>
                 </TableRow>

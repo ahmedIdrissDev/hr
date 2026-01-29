@@ -9,14 +9,14 @@ import Userbutton from '../../features/userbutton'
 
 const Sidebar = () => {
   return (
-    <div className="w-full bg-tgcc-50  gap-2.5 p-2   border-neutral-200 flex flex-col justify-between h-full">
+    <div className="w-full bg-white   gap-2.5 p-2   border-neutral-200 flex flex-col justify-between h-full">
       <div className="w-full flex items-center">
 
       <Logo/>
       </div>
-      <div className="py-2">
+      {/* <div className="py-2">
         <Userbutton/>
-      </div>
+      </div> */}
       <div className="w-full py-3 gap-1 h-full flex flex-col">
       {links.map((data , index)=>(
         <Button key={index} {...data} />

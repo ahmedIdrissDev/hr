@@ -9,9 +9,9 @@ const layout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <div className='grid   h-dvh grid-cols-[270px_1fr] '>
+    <div className='grid   h-dvh grid-cols-[65px_1fr_300px] '>
       <Sidebar />
-       <ScrollArea  className="w-full     h-dvh">
+       <ScrollArea  className="w-full  bg-tgcc-100/55   h-dvh">
         <Navbar/>
         <div className="p-2 h-full ">
 

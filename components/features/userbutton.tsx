@@ -13,22 +13,18 @@ const Userbutton = () => {
   const user = data?.user.first_name;
   return (
     <>
-      <div
-        onClick={trigger}
-        className="flex bg-white border-0 items-center  text-sm   justify-between p-2 cursor-pointer gap-1.5 min-h-12 border-neutral-200 rounded-md"
-      >
-        <div className="flex items-center gap-1.5">
+     <div className="flex justify-center items-center">
           <Image
+                     onClick={trigger}
+
             src={"/icons/user-Profile.png"}
             className="w-10 opacity-70 h-10 rounded-full"
             width={1000}
             height={1000}
             alt="profile"
           />
-          <span> bonjour {user} </span>
-        </div>
-        <ChevronsUpDown className="text-sm opacity-70" />
-      </div>
+
+     </div>
       <AnimatePresence>
         {open && (
           <div
