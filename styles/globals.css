@@ -6,17 +6,22 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --color-tgcc-50: #ecf5ff;
---color-tgcc-100: #dcecff;
---color-tgcc-200: #c0dbff;
---color-tgcc-300: #9ac2ff;
---color-tgcc-400: #719cff;
---color-tgcc-500: #5078ff;
---color-tgcc-600: #3754fa;
---color-tgcc-700: #253ddd;
---color-tgcc-800: #2136b2;
---color-tgcc-900: #23358c;
---color-tgcc-950: #151e51;
+ --color-tgcc-50: #f0fdfc;
+--color-tgcc-100: #ccfbf8;
+--color-tgcc-200: #99f6f1;
+--color-tgcc-300: #5fe9e8;
+--color-tgcc-400: #2ed0d3;
+--color-tgcc-500: #15b2b7;
+--color-tgcc-600: #0e8b93;
+--color-tgcc-700: #10737a;
+--color-tgcc-800: #11585e;
+--color-tgcc-900: #134a4e;
+--color-tgcc-950: #042a2f;
+
+
+
+
+
 
 
   --color-sidebar-ring: var(--sidebar-ring);
@@ -59,7 +64,7 @@
 
 @layer components {
   .button {
-    @apply rounded-md border    cursor-pointer flex items-center px-2 gap-2    border-neutral-300/40 shadow-neutral-100/55;
+    @apply rounded-md border   bg-white cursor-pointer flex items-center px-2 gap-2    border-neutral-300/40 shadow-neutral-100/55;
   }
   .input {
     @apply border border-neutral-200 h-11 rounded-md px-2 outline-0 focus:outline-1 invalid:outline-red-500 focus:outline-tgcc-400;

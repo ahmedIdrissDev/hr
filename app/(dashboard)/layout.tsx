@@ -13,7 +13,7 @@ const layout = ({
       <Sidebar />
        <ScrollArea  className="w-full     h-dvh">
         <Navbar/>
-        <div className="p-2 ">
+        <div className="p-2 h-full ">
 
         {children}
         </div>

@@ -74,8 +74,7 @@ const Searchbutton = () => {
                 placeholder="Matricule"
               />
               {getEmployeesData?.error ? (
-                <Alert variant="destructive">
-                  <SearchAlert />
+                <Alert className="border-0" variant="destructive">
                   <AlertTitle>matricule Error </AlertTitle>
                   <AlertDescription>Ce matricule n’existe pas. Veuillez vérifier que le matricule est correct             </AlertDescription>
                 </Alert>

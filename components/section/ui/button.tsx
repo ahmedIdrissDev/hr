@@ -15,7 +15,7 @@ const Button = ({icon , label ,path}:linksProps) => {
     const handleNavigation = ()=> route.push(path)
 
   return (
-   <button onClick={handleNavigation} className={twMerge('w-full text-[15px]    relative h-11  px-2 flex rounded-md border   cursor-pointer items-center justify-start  gap-2' , isActive ? 'opacity-100  bg-tgcc-800 text-white border-0       ':"opacity-60 border-0  ")}>
+   <button onClick={handleNavigation} className={twMerge('w-full text-[15px]    relative h-11  px-2 flex rounded-md border   cursor-pointer items-center justify-start  gap-2' , isActive ? 'opacity-100  bg-tgcc-500 text-white border-0       ':"opacity-60 border-0  ")}>
         <span className="material-symbols-outlined">
 {icon}
 </span>

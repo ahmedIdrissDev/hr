@@ -21,8 +21,8 @@ const Employee = () => {
   const Present = data || []
     
   return (
-    <div className="">
-      <div className="py-2">
+    <div className="bg-tgcc-900  p-2 h-max rounded-md">
+      <div className="py-2 text-white">
         <span>Suivi du pointage Mensuel</span>
       </div>
       <ScrollArea className="h-full py-2 flex flex-col space-x-2.5 button w-full rounded-md  ">
@@ -52,15 +52,20 @@ const Employee = () => {
         {Present &&
                     <>
                     
-                    <div className="w-full min-h-12 rounded-md p-1.5 flex justify-between items-center bg-teal-50 ">
-                      <input type="text" className="w-96 h-11 bg-white outline-0" placeholder="Matricule" />
-                      <div className="">
-                        <button className="button text-white h-11 w-40 rounded-md justify-center bg-tgcc-900 border-0 items-center">Search</button>
-                      </div>
-                    </div>
+                    
             <div className="button p-0 mt-1">
    
         <Table className="mt-2">
+           <TableHeader >
+    <TableRow >
+      <TableHead className="w-[100px]">Matricule</TableHead>
+      <TableHead>Nom</TableHead>
+      <TableHead>Prenom</TableHead>
+      <TableHead>type</TableHead>
+
+      <TableHead className="text-right">Action</TableHead>
+    </TableRow>
+  </TableHeader>
           <TableBody>
             
             {Present.map(
@@ -71,7 +76,7 @@ const Employee = () => {
                   <TableCell className="font-medium">{last_name} </TableCell>
                   <TableCell>{first_name} </TableCell>
                   <TableCell>{type}</TableCell>
-                  <TableHead>
+                  <TableHead className=" flex justify-end items-center h-full">
                      <Link href={`/employee/${_id}`} className="button justify-center w-40 h-11">
                       Consultation
                      </Link>

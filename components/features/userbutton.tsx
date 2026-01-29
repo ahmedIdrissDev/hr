@@ -19,7 +19,7 @@ const Userbutton = () => {
       >
         <div className="flex items-center gap-1.5">
           <Image
-            src={"/icons/user.png"}
+            src={"/icons/user-Profile.png"}
             className="w-10 opacity-70 h-10 rounded-full"
             width={1000}
             height={1000}
@@ -45,7 +45,7 @@ const Userbutton = () => {
               <div className="w-full p-2 flex flex-col gap-2  h-full">
                   <div className="flex p-1.5  h-20 rounded-md items-center gap-1.5">
           <Image
-            src={"/icons/user.png"}
+            src={"/icons/user-Profile.png"}
             className="w-10 opacity-70 h-10 rounded-full"
             width={1000}
             height={1000}

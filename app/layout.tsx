@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "@/styles/globals.css";
+import "../styles/globals.css";
 import Provider from "@/hooks/useAuth";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/utils";
