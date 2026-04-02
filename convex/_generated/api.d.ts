@@ -9,7 +9,6 @@
  */
 
 import type * as function_ from "../function.js";
-import type * as stock from "../stock.js";
 import type * as user from "../user.js";
 
 import type {
@@ -20,7 +19,6 @@ import type {
 
 declare const fullApi: ApiFromModules<{
   function: typeof function_;
-  stock: typeof stock;
   user: typeof user;
 }>;
 

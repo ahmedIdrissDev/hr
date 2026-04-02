@@ -1,24 +1,36 @@
-import { withAuth } from "next-auth/middleware"
-import { NextResponse } from "next/server"
-export default withAuth(
-  function middleware(req) {
-     const isAuth = !!req.nextauth.token
-     const pathname = req.nextUrl.pathname
-     const isRootPage = pathname === "/";
-     if(isAuth && isRootPage) {
-       return NextResponse.redirect(new URL("/dashboard" , req.url))
-     }
-      if(!isAuth && !isRootPage) {
-       return NextResponse.redirect(new URL("/" , req.url))
-     }
-     return NextResponse.next();
-  },
+import { clerkMiddleware, createRouteMatcher } from '@clerk/nextjs/server';
+import { NextResponse } from 'next/server';
 
-  {
-    callbacks: {
-      authorized: ({ token }) => !!token, 
-       },
-  },
-)
+const isProtectedRoute = createRouteMatcher([
+  '/dashboard(.*)',
+  '/employee(.*)',
+]);
 
-export const config = { matcher: ["/dashboard(.*)" ,'/taches(.*)' ,'/effectifs(.*)', '/meeting(.*)'] }
+export default clerkMiddleware(async (auth, req) => {
+  const { userId, sessionClaims } = await auth();
+  const role = sessionClaims?.metadata?.role as string | undefined;
+console.log(role)
+  if (isProtectedRoute(req)) {
+    if (!userId) {
+      return NextResponse.redirect(new URL('/sign-in', req.url));
+    }
+
+    const isDashboard = req.nextUrl.pathname.startsWith('/dashboard');
+    const isEmployee = req.nextUrl.pathname.startsWith('/employee');
+
+    if (isDashboard && role !== 'ADMIN') {
+      return NextResponse.redirect(new URL('/user', req.url));
+    }
+
+    if (isEmployee && role !== 'employee' && role !== 'ADMIN') {
+      return NextResponse.redirect(new URL('/user', req.url));
+    }
+  }
+});
+
+export const config = {
+  matcher: [
+    '/((?!_next|[^?]*\\.(?:html?|css|js(?!on)|jpe?g|webp|png|gif|svg|ttf|woff2?|ico|csv|docx?|xlsx?|zip|webmanifest)).*)',
+    '/(api|trpc)(.*)',
+  ],
+};

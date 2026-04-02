@@ -22,7 +22,7 @@ const Card = ({Number ,icon ,label ,description ,hasbutton , main}:Cardtype) => 
                <h3 className='text-2xl'>{Number}</h3> 
             </div>
             {hasbutton &&
-              <button className='w-11 button bg-tgcc-500  flex justify-center items-center gap-2 h-12 cursor-pointer rounded-md  text-white border-0 '> 
+              <button className='w-11 button bg-white  flex justify-center items-center gap-2 h-12 cursor-pointer rounded-md  text-tgcc-950 border-0 '> 
               <ArrowUpRight/>
               </button>
             }

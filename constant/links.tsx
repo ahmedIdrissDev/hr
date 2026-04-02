@@ -20,11 +20,8 @@ export const links:links[]=[
     } ,
     
      
-     {
-        icon:<Building/> ,
-        label:'Chantier' ,
-        path:'/stock'
-    } ,
+    
+    
      
          {
         icon:<Settings/> ,

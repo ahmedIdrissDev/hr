@@ -3,7 +3,7 @@ import { v } from "convex/values";
 
 export const login = query({
   args: {
-    username: v.string(),
+    email: v.string(),
     password: v.string(),
   },
   handler: async (ctx, args) => {
@@ -12,16 +12,16 @@ export const login = query({
         .query("user")
         .filter((q) =>
           q.and(
-            q.eq(q.field("username"), args.username),
+            q.eq(q.field("email"), args.email),
             q.eq(q.field("password"), args.password)
           )
         )
         .first();
       if(!user) return null
       if (user) {
-        const { first_name, last_name, role, _id ,username } = user;
+        const { first_name, last_name, role, _id ,email } = user;
         return {
-          username,
+          email,
           _id,
           first_name,
           last_name,

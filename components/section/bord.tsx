@@ -15,8 +15,9 @@ const Bord = () => {
         Number={employees.length}
         icon={<User/>}
         main
-        label='Aperçu des employés'
+        label='HS'
         description='Résumé rapide de tous les employés'
+        hasbutton
        />
           <Card
         Number={ employees.length - Present.length}
@@ -30,7 +31,7 @@ const Bord = () => {
         Number={Present.length}
         icon={<TrendingUp/>}
         label='Présents'
-                hasbutton
+                
 
         description='Membres de l’équipe en service aujourd’hui'
        />

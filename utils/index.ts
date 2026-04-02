@@ -3,7 +3,7 @@ import { fetchQuery } from "convex/nextjs";
 import CredentialsProvider from "next-auth/providers/credentials";
 // import Login from "@/functions";
 interface LoginTypes {
-    username:string , 
+    email:string , 
     password: string ,
 }
 export const authOptions = {
@@ -17,7 +17,7 @@ export const authOptions = {
     },
     async authorize(credentials, req) {
        const data :LoginTypes  ={
-           username: credentials?.email as string ,
+           email: credentials?.email as string ,
            password: credentials?.password as string
        }
         const user =  await fetchQuery(api.user.login  , data)
@@ -51,5 +51,4 @@ secret: process.env.NEXTAUTH_SECRET,
   } ,
   
 };
-
 

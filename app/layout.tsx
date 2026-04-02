@@ -6,7 +6,7 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/utils";
 import { Toaster } from "@/components/ui/sonner"
 
-
+import { ClerkProvider } from '@clerk/nextjs'
 const inter = Inter({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -33,20 +33,13 @@ export default async function RootLayout({
       <body
         className={inter.className}
         >
-      <Toaster
-       position="top-center"
-      style={
-        {
-          "--normal-bg": "var(--color-tgcc-50)",
-          "--normal-text": "var(--color-tgcc-500)",
-          "--normal-border": "var(--border)",
-          "--border-radius": "var(--radius)",
-        } as React.CSSProperties
-      }
-      closeButton theme="light" />
-      <Provider session={SessionProvider} >
+          <Provider>
+
+                  <ClerkProvider>
         {children}
-        </Provider>
+</ClerkProvider>
+          </Provider>
+    
       </body>
     </html>
   );
