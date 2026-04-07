@@ -3,7 +3,6 @@ import Logo from '../ui/logo'
 import Button from '../ui/button'
 import { Home, Users } from 'lucide-react'
 import Searchbutton from '../ui/search'
-import Logout from '../ui/logout'
 import { links } from '@/constant/links'
 import Userbutton from '../../features/userbutton'
 
@@ -24,7 +23,6 @@ const Sidebar = () => {
       ))}
          
       </div>
-      <Logout/>
     </div>
   )
 }
