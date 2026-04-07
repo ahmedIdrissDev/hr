@@ -2,9 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../styles/globals.css";
 import Provider from "@/hooks/useAuth";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/utils";
-import { Toaster } from "@/components/ui/sonner"
+
 
 import { ClerkProvider } from '@clerk/nextjs'
 const inter = Inter({
@@ -25,7 +23,6 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const SessionProvider =  await getServerSession(authOptions)
 
   return (
     
