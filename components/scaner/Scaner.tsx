@@ -183,7 +183,7 @@ export default function ScannerCode() {
           <p className="text-xs font-bold tracking-[0.3em] text-zinc-500 uppercase">TGCC</p>
           <h1 className="text-xl font-semibold text-white mt-1">Attendance Scanner</h1>
         </div>
-
+        from 
         {/* Scanner (only shown while scanning) */}
         {(status === 'scanning' || status === 'locating' || status === 'checking' || status === 'submitting') && (
           <div className="relative w-full aspect-square overflow-hidden rounded-2xl bg-zinc-900 shadow-2xl">
