@@ -10,14 +10,13 @@ const layout = ({
 }>) => {
   return (
     <div className='grid   h-dvh grid-cols-[65px_1fr] '>
-      <Sidebar />
-       <ScrollArea  className="w-full  bg-tgcc-100/55   h-dvh">
+        <Sidebar />
+        <ScrollArea  className="w-full  bg-tgcc-50/50    h-dvh">
         <Navbar/>
-        <div className="p-2 h-full ">
-
+        <div className="p-2  h-full ">
         {children}
         </div>
-              <ScrollBar hidden orientation="vertical" />
+        <ScrollBar hidden orientation="vertical" />
        </ScrollArea>
     </div>
   )

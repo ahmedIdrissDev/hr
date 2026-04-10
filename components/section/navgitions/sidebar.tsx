@@ -8,7 +8,7 @@ import Userbutton from '../../features/userbutton'
 
 const Sidebar = () => {
   return (
-    <div className="w-full bg-white   gap-2.5 p-2   border-neutral-200 flex flex-col justify-between h-full">
+    <div className="w-full bg-white border-r  gap-2.5 p-2   border-neutral-200 flex flex-col justify-between h-full">
       <div className="w-full flex items-center">
 
       <Logo/>

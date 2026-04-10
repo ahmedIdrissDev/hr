@@ -77,13 +77,10 @@ const Employee = getEmployeesData
   console.log(status)
   return (
     <>
-      <button onClick={trigger} className=" button h-10  justify-center  cursor-pointer w-40  ">
-        <span>Pointage</span>
-      </button>
+      
       <AnimatePresence>
 
-      {open && (
-        <div onClick={trigger} className="inset-0 z-40 fixed shadow-2xl shadow-neutral-200 bg-neutral-950/20 flex justify-center items-center">
+        <div onClick={trigger} className="   w-full h-dvh flex justify-center items-center">
           <motion.form
             ref={formRef}
             initial={{opacity:0 , translateY:10}}
@@ -91,10 +88,10 @@ const Employee = getEmployeesData
             exit={{opacity:0 , translateY:10}}
             onClick={e=> e.stopPropagation()}
             onSubmit={handleSubmite}
-            className="w-1/2 border-0 flex  border-tgcc-500 flex-col justify-between gap-2 min-h-96 p-2.5 bg-white rounded-md"
+            className="w-1/2 border flex   border-neutral-200 flex-col justify-between gap-2 min-h-96 p-2.5 bg-white rounded-md"
           >
             {loading && <LoadingSpinner/>}
-            <div className="flex flex-col gap-2">
+            <div className="flex  flex-col gap-2">
               
               <input
                 
@@ -172,13 +169,12 @@ const Employee = getEmployeesData
             </div>
            
             <div className="flex items-center justify-end gap-1.5">
-              <button disabled={loading} className={twMerge('h-11 gap-2 flex justify-center items-center cursor-pointer w-40 bg-tgcc-600 border-t-2 border-tgcc-500 text-white rounded-md', loading  || number_Id == 0 || number_Id==null ? 'bg-neutral-500 border-neutral-400/35 cursor-auto':'bg-tgcc-600 border-t-2 border-tgcc-500')}>
+              <button disabled={loading} className={twMerge('h-11 gap-2 flex justify-center items-center cursor-pointer w-40 bg-tgcc-600   text-white rounded-md', loading  || number_Id == 0 || number_Id==null ? 'bg-neutral-500 cursor-auto':'bg-tgcc-600')}>
                  {status ? "Pointage sortie":"Pointage"}
               </button>
             </div>
           </motion.form>
         </div>
-      )}
             </AnimatePresence>
 
     </>

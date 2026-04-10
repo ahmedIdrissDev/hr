@@ -4,7 +4,7 @@ import Navbar from '@/components/section/navgitions/navbar';
 import Topbar from '@/components/mobile/topbar';
 
 export const viewport: Viewport = {
-  themeColor: "#4c63ff",
+  themeColor: "#ffffff",
 };
 
 
@@ -14,9 +14,12 @@ const layout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <div className='px-2 bg-tgcc-500 text-white  h-dvh  '>
+    <div className='px-2  bg-tgcc-50  h-dvh  '>
       <Topbar/>
+      <div className="w-full px-2">
       {children}
+
+      </div>
        </div>
   )
 }
