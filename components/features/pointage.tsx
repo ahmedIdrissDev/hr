@@ -13,7 +13,6 @@ import { useSession } from "next-auth/react";
 import { ContextStoreDataProvider } from "@/Context";
 import useDatetime from "@/hooks/useDatetime";
 import { Spinner } from "../ui/spinner";
-import Loading from "../section/ui/loading";
 import LoadingSpinner from "../section/ui/Loading";
 
 interface  AttendanceType{
@@ -48,10 +47,10 @@ const Employee = getEmployeesData
       if(employee.status ==="Inactif") {
          return  toast.error('Le salaire ne pas actif.')
        } 
-      if(project_id !== chantier._id) {
-          return  toast.error('Le salaire n’est pas affecté au chantier.')
+      // if(project_id !== chantier._id) {
+      //     return  toast.error('Le salaire n’est pas affecté au chantier.')
 
-       } 
+      //  } 
       
         const data = {
              project_id  ,
@@ -109,15 +108,7 @@ const Employee = getEmployeesData
                 </Alert>
               ) : (
                 <>
-                  {chantier?._id != employee?.project_id && (
-                    <Alert variant="destructive">
-                      <SearchAlert />
-                      <AlertTitle>Error</AlertTitle>
-                      <AlertDescription>
-                        Le salaire n’est pas affecté au chantier.
-                      </AlertDescription>
-                    </Alert>
-                  )}
+                 
                   {employee?._id &&
                   <div className="grid grid-cols-2 gap-1.5">
                     <div className="flex flex-col gap-1.5 w-full">
