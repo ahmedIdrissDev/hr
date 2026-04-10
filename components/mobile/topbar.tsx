@@ -9,7 +9,6 @@ const Topbar = () => {
        <Logo/>
        <div className="flex items-center gap-2">
          <UserButton/>
-         <SelectorButton/>
        </div>
     </nav>  )
 }

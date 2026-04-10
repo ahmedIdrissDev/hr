@@ -78,6 +78,7 @@ const Employee = getEmployeesData
     <>
       
       <AnimatePresence>
+       
 
         <div onClick={trigger} className="   w-full h-dvh flex justify-center items-center">
           <motion.form
@@ -91,7 +92,10 @@ const Employee = getEmployeesData
           >
             {loading && <LoadingSpinner/>}
             <div className="flex  flex-col gap-2">
-              
+               <div className="">
+          <h1 className="text-xl">RH Suivi – Validez votre présence</h1>
+          <p className="text-sm opacity-80">Merci de confirmer et valider votre présence afin d’assurer un suivi RH précis et à jour.</p>
+        </div>
               <input
                 
                 onChange={(e) => setNumber_Id(Number(e.currentTarget.value))}
